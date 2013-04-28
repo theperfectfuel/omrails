@@ -2,7 +2,15 @@
 	<h1>Welcome to Pinstruments.com</h1>
 	<p>This is a place to show off and share your favorite instruments with other musicians, collectors and equipment geeks. Have fun!</p>
 
+	<% if user_signed_in? %>
+		<p>
+		<%= link_to "Check Out Pins", pins_path, class: "btn btn-primary btn-large" %>
+		</p>
+
+	<% else %>
+
 	<p>
 	<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 	</p>
+	<% end %>
 </div>
